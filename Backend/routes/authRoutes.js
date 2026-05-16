@@ -37,8 +37,10 @@ router.get(
     );
 
     res.redirect(
-      `http://localhost:5173/google-success?token=${token}`
-    );
+  process.env.NODE_ENV === "production"
+    ? `https://fair-deal-psi.vercel.app/google-success?token=${token}`
+    : `http://localhost:5173/google-success?token=${token}`
+);
   }
 );
 
