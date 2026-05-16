@@ -129,7 +129,7 @@ formData.languages.forEach((lang) => {
     );
 
     await axios.post(
-      "http://localhost:5000/api/providers",
+      "https://fairdeal-backend-rbz9.onrender.com/api/providers",
       form,
       
     );

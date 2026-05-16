@@ -43,7 +43,7 @@ const serviceAvatars = {
 const fetchProvider = async () => {
   try {
     const res = await axios.get(
-      `http://localhost:5000/api/providers/${id}`
+      `https://fairdeal-backend-rbz9.onrender.com/api/providers/${id}`
     );
 
     const p = res.data;
@@ -83,7 +83,7 @@ setReviews(p.reviews || []);
 const checkCanRate = async (email) => {
   try {
     const res = await axios.get(
-      `http://localhost:5000/api/bookings/can-rate/${id}/${email}`
+      `https://fairdeal-backend-rbz9.onrender.com/api/bookings/can-rate/${id}/${email}`
     );
 
     setCanRate(res.data.canRate);
@@ -103,7 +103,7 @@ const checkCanRate = async (email) => {
   ) {
     try {
       await axios.post(
-        "http://localhost:5000/api/bookings",
+        "https://fairdeal-backend-rbz9.onrender.com/api/bookings",
         {
           providerId: provider.id,
           ...bookingData,
@@ -137,7 +137,7 @@ const handleReviewSubmit = async () => {
 console.log(provider.id);
 console.log(localStorage.getItem("userName"));
     await axios.post(
-      "http://localhost:5000/api/reviews",
+      "https://fairdeal-backend-rbz9.onrender.com/api/reviews",
       {
         providerId: provider.id,
         customerEmail: localStorage.getItem("userEmail"),

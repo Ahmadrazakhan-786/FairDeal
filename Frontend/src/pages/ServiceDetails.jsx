@@ -88,7 +88,7 @@ function ServiceDetail() {
 const fetchProviders = async () => {
   try {
     const res = await axios.get(
-      `http://localhost:5000/api/providers?category=${category}`
+      `https://fairdeal-backend-rbz9.onrender.com/api/providers?category=${category}`
     );
 
     const formatted = res.data.map((p) => ({
@@ -149,7 +149,7 @@ let filteredProviders = [...allProviders];
   ) {
     try {
       await axios.post(
-        "http://localhost:5000/api/bookings",
+        "https://fairdeal-backend-rbz9.onrender.com/api/bookings",
         {
           providerId: selectedProvider.id,
           ...bookingData,
@@ -179,7 +179,7 @@ let filteredProviders = [...allProviders];
 const handleRatingSubmit = async (providerId) => {
   try {
     await axios.post(
-      "http://localhost:5000/api/reviews",
+      "https://fairdeal-backend-rbz9.onrender.com/api/reviews",
       {
         providerId: providerId,
         customerEmail: bookingData.email,

@@ -19,7 +19,7 @@ export default function GoogleSuccess() {
 
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/auth/me",
+          "https://fairdeal-backend-rbz9.onrender.com/api/auth/me",
           {
             headers: {
               Authorization: `Bearer ${token}`,
